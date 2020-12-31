@@ -1,0 +1,116 @@
+html {
+	font-family: 'Noto Sans KR', sans-serif;
+}
+body {
+	margin: 0;
+}
+/* p,h1,h2 {text-align: center;} */
+
+
+div, section, header, footer, p, h1, h2 {
+	box-sizing: border-box;
+	text-align: center;
+}
+a {
+	color: royalblue;
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.this {
+	width: 50%;
+}
+
+.scroll-graphic {
+	/* 스크롤 생성 방지 */
+	overflow-x: hidden;
+	position: sticky;
+	top: 0;
+	height: 100vh;
+
+}
+
+/* 전체 폭 */
+.global-width {
+	max-width: 620px;
+	/* 좌우 마진을 auto로 해서 center */
+	margin: 0 auto;
+	/* 좌우 여백 +, 5px or 1rem */
+	padding: 0 1rem; 
+}
+
+/* 사용될 이미지 -> .graphic-item */
+.graphic-item {
+	/* center 정렬 */
+	display: flex;
+	/* 세로 방향 center 정렬 */
+	align-items: center;
+	/* 가로 방향 center 정렬 */
+	justify-content: center;
+	/* 사진 겹치기 */
+	position: absolute;
+	left: 0;
+	top: 0;
+	/* 크기 */
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: 0.5s;
+	/* 바뀔 것을 미리 알려줌. 불투명도 미리 알려줌. 좀 더 빠른 처리. 과도한 사용은 과부하 */
+	will-change: opacity;
+}
+.visible {
+	opacity: 1;
+}
+
+
+/* 이미지 시작하는 위치 */
+.scene-img {
+	max-height: 100vh;
+}
+
+.scroll-text{
+	position: relative;
+	padding-button: 1px;
+}
+
+/* 텍스트 순서대로 나오는 창 */
+.step{
+	/* 텍스트 창과 창 사이의 거리 60vh */
+	margin-bottom: 60vh;
+	padding: 0.5rem 1rem;
+	border-radius: 10px;
+	/* 텍스트 창 박스 */
+	background: rgba(255, 255, 255, 0.8);
+	/* 박스 쉐도우 */
+	box-shadow: rgba(0, 0, 0, 0.3) 0 0 3px;
+
+}
+
+.Spike {
+	position: absolute;
+	left: 0;
+	bottom: 70%;
+	width: 70px;
+	/* 새 크기의 100% 만큼 */
+	transform: translateX(-100%);
+	/* 재생시간 / 딜레이 ( 지연시간 ) -> 0.5초 후에 1.5초 동안 애니메이션을 재생 */
+	transition: 1.5s 0.5s linear;
+}
+
+/* index 5일 경우 , 왼쪽 아래에 위치 */
+[data-index="5"] .Spike {
+	left: 30%;
+	bottom: 30%;
+}
+.global-footer {
+	padding: 2rem 0;
+	text-align: center;
+}
+
+/* ㅋㅋ */
+.strikethrough {
+	text-decoration: line-through;
+}
